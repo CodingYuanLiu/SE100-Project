@@ -36,6 +36,30 @@ const router = new Router({
       }
     },
     {
+      path: '/crepcar',
+      name: 'crepcar',
+      component: () => import(/* webpackChunkName: "create" */ '@/pages/crepcar/Crepcar.vue'),
+      meta:{
+        requireLogin:true
+      }
+    },
+    {
+      path: '/crepfood',
+      name: 'crepfood',
+      component: () => import(/* webpackChunkName: "create" */ '@/pages/crepfood/crepfood.vue'),
+      meta:{
+        requireLogin:true
+      }
+    },
+    {
+      path: '/crepmem',
+      name: 'crepmem',
+      component: () => import(/* webpackChunkName: "create" */ '@/pages/crepmem/Crepmem.vue'),
+      meta:{
+        requireLogin:true
+      }
+    },
+    {
       path: '/edit/:blogId',
       name: 'edit',
       component: () => import(/* webpackChunkName: "edit" */ '@/pages/edit/Edit.vue'),
@@ -68,7 +92,7 @@ const router = new Router({
   ]
 });
 
-router.beforeEach((to,from,next) =>{    
+router.beforeEach((to,from,next) =>{
   if(to.matched.some(record => record.meta.requireLogin)){//如果该路由需要验证登录状态
     store.dispatch('checkLogin').then(isLogin=>{
       if(!isLogin){
@@ -78,7 +102,7 @@ router.beforeEach((to,from,next) =>{
         });
       } else{
         next();
-      }      
+      }
     })
   } else if(to.matched.some(record => record.meta.requireNotLogin)){
     store.dispatch('checkLogin').then(isLogin=>{

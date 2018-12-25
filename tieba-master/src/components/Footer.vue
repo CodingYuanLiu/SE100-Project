@@ -1,12 +1,13 @@
 <template>
 	<footer>
+		拼的越多，省得越多
 	</footer>
 </template>
 
 <style scoped>
 	footer{
-		background: #545c64;
-		color: white;
+		background: #250707;
+		color: #e4b875;
 		text-align: center;
 		padding: 10px 0;
 	}

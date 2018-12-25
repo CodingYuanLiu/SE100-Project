@@ -1,15 +1,23 @@
 <template>
   <el-menu :default-active="$route.path" mode="horizontal" router>
     <el-menu-item index="/">首页</el-menu-item>
-    <el-menu-item index="/new">试试呗</el-menu-item>
-    <el-menu-item index="/create" class="right"><i class="el-icon-edit"></i>发帖</el-menu-item>
     <el-menu-item index="/register" class="right" v-if="!isLogin">注册</el-menu-item>
+    <template>
+    <el-submenu index="my" style="float:right">
+      <template slot="title">发帖<i class="el-icon-edit"></i></template>
+      <el-menu-item index="/crepcar" >拼车</el-menu-item>
+      <el-menu-item index="/crepmem" >拼会员</el-menu-item>
+      <el-menu-item index="/crepfood" >拼外卖</el-menu-item>
+    </el-submenu>
+    </template>
+    <template>
     <el-menu-item index="/login" class="right" v-if="!isLogin">登录</el-menu-item>
-    <el-submenu index="my" style="float:right" v-if="isLogin">
+    <el-submenu index="you" style="float:right" v-if="isLogin">
     <template slot="title">{{userInfo.username}}</template>
     <el-menu-item index="/my?pge=1">我的帖子</el-menu-item>
     <el-menu-item index="1" @click="onLogout">注销</el-menu-item>
     </el-submenu>
+    </template>
   </el-menu>
 </template>
 <script>
