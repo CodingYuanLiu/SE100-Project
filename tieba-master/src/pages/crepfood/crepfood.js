@@ -4,7 +4,7 @@ export default {
       ruleForm: {
         title: '',
         desc:'',
-        content: ''
+        wuyuexin: ''
       },
       rules: {
         title: [
@@ -15,7 +15,7 @@ export default {
           {required:true,message:'请输入出发地点',trigger:'blur'},
           {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
         ],
-        content: [
+        wuyuexin: [
           { required: true, message: '请填写目的地', trigger: 'blur' }
         ]
       }
@@ -31,7 +31,7 @@ export default {
           blogs.save({
             title:this.ruleForm.title,
             description:this.ruleForm.desc,
-            content:this.ruleForm.content,
+            wuyuexin:this.ruleForm.wuyuexin,
             user:currentUser,
             userId:currentUser.toJSON().objectId,
           })

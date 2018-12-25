@@ -31,7 +31,7 @@ export default {
           blogs.save({
             title:this.ruleForm.title,
             description:this.ruleForm.desc,
-            content:this.ruleForm.content,
+            wuyuexin:this.ruleForm.wuyuexin,
             user:currentUser,
             userId:currentUser.toJSON().objectId,
           })

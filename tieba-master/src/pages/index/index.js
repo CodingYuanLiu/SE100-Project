@@ -14,6 +14,7 @@ export default {
 	},
 	mixins:[mixin],
 	watch:{
+
 		'$route.query.page':function(newVal){
 			if (!newVal) {
 				this.getBlog(1);
@@ -39,6 +40,8 @@ export default {
 				blogs.forEach( (blog, index) => {
 					this.blogs.push({
 						id:blog.id,
+            wuyuexin:blog.attributes.wuyuexin,
+            content:blog.attributes.content,
 						title:blog.attributes.title,
 						description:blog.attributes.description,
 						createdAt:blog.createdAt,

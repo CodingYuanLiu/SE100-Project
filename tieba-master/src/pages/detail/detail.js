@@ -12,6 +12,9 @@ export default {
 		content(){
 			return marked(this.blog.content);
 		},
+      wuyuexin(){
+        return marked(this.blog.wuyuexin);
+      },
 	},
 	created(){
 		this.getBlogDetail();

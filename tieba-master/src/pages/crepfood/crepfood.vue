@@ -7,8 +7,8 @@
       <el-form-item label="配送地址" prop="desc">
         <el-input  type="textarea" v-model="ruleForm.desc"></el-input>
       </el-form-item>
-      <el-form-item label="配送商家" prop="content">
-        <el-input  type="textarea" v-model="ruleForm.content" placeholder="支持 markdown 语法"></el-input>
+      <el-form-item label="配送商家" prop="wuyuexin">
+        <el-input  type="textarea" v-model="ruleForm.wuyuexin" placeholder="支持 markdown 语法"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm')">发帖</el-button>

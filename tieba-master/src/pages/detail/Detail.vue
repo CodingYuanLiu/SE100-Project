@@ -11,7 +11,9 @@
     </section>
     <section class="content">
       <h3>正文内容：</h3>
-      <div v-html="content"></div>
+      <!--将条件设相反将看到不同结果-->
+      <div v-html="wuyuexin" v-if="true"></div>
+      <div v-html="content" v-if="false"></div>
     </section>
   </div>
 </template>
