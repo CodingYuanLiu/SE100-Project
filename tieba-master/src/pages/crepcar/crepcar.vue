@@ -1,14 +1,14 @@
 <template>
   <div id="crepcar">
     <el-form label-position="top" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="拼车时间" prop="title">
+      <el-form-item label="拼车标题" prop="title">
         <el-input v-model="ruleForm.title"></el-input>
       </el-form-item>
-      <el-form-item label="出发地点" prop="desc">
+      <el-form-item label="拼车简介" prop="desc">
         <el-input  type="textarea" v-model="ruleForm.desc"></el-input>
       </el-form-item>
-      <el-form-item label="目的地点" prop="content">
-        <el-input  type="textarea" v-model="ruleForm.content" placeholder="支持 markdown 语法"></el-input>
+      <el-form-item label="详细信息" prop="carcontent">
+        <el-input  type="textarea" v-model="ruleForm.carcontent" placeholder="应包含联系方式、日期、上车地点、目的地点等信息"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm')">发帖</el-button>

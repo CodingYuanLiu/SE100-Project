@@ -4,19 +4,19 @@ export default {
       ruleForm: {
         title: '',
         desc:'',
-        wuyuexin: ''
+        foodcontent: '',
       },
       rules: {
         title: [
-          { required: true, message: '请输入时间', trigger: 'blur' },
+          { required: true, message: '请输入标题', trigger: 'blur' },
           { min: 3, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
         ],
         desc: [
-          {required:true,message:'请输入出发地点',trigger:'blur'},
+          {required:true,message:'请输入拼外卖简介',trigger:'blur'},
           {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
         ],
-        wuyuexin: [
-          { required: true, message: '请填写目的地', trigger: 'blur' }
+        foodcontent: [
+          { required: true, message: '请填写拼外卖详细信息', trigger: 'blur' }
         ]
       }
     };
@@ -30,8 +30,9 @@ export default {
           let currentUser = this.AV.User.current();
           blogs.save({
             title:this.ruleForm.title,
-            description:this.ruleForm.desc,
-            wuyuexin:this.ruleForm.wuyuexin,
+            description:"日期:"+this.ruleForm.date+"<\br>取餐地址:"+this.ruleForm.addr,           
+            foodcontent:this.ruleForm.foodcontent,
+            tel:this.ruleForm.tel,
             user:currentUser,
             userId:currentUser.toJSON().objectId,
           })

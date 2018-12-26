@@ -4,7 +4,7 @@ export default {
       ruleForm: {
         title: '',
         desc:'',
-        content: ''
+        memcontent: '',
       },
       rules: {
         title: [
@@ -12,11 +12,11 @@ export default {
           { min: 3, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
         ],
         desc: [
-          {required:true,message:'请输入帖子内容摘要',trigger:'blur'},
+          {required:true,message:'请输入拼会员简介',trigger:'blur'},
           {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
         ],
-        content: [
-          { required: true, message: '请填写帖子详细内容', trigger: 'blur' }
+        memcontent: [
+          { required: true, message: '请输入拼会员详细信息', trigger: 'blur' }
         ]
       }
     };
@@ -31,7 +31,7 @@ export default {
           blogs.save({
             title:this.ruleForm.title,
             description:this.ruleForm.desc,
-            wuyuexin:this.ruleForm.wuyuexin,
+            memcontent:this.ruleForm.memcontent,
             user:currentUser,
             userId:currentUser.toJSON().objectId,
           })

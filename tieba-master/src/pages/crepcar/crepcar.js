@@ -4,19 +4,19 @@ export default {
       ruleForm: {
         title: '',
         desc:'',
-        content: ''
+        carcontent: '',
       },
       rules: {
         title: [
-          { required: true, message: '请输入时间', trigger: 'blur' },
+          { required: true, message: '请输入拼车标题', trigger: 'blur' },
           { min: 3, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
         ],
         desc: [
-          {required:true,message:'请输入出发地点',trigger:'blur'},
+          {required:true,message:'请输入拼车简介',trigger:'blur'},
           {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
         ],
-        content: [
-          { required: true, message: '请填写目的地', trigger: 'blur' }
+        carcontent: [
+          { required: true, message: '请填写拼车详细信息', trigger: 'blur' }
         ]
       }
     };
@@ -31,7 +31,7 @@ export default {
           blogs.save({
             title:this.ruleForm.title,
             description:this.ruleForm.desc,
-            content:this.ruleForm.content,
+            carcontent:this.ruleForm.carcontent,
             user:currentUser,
             userId:currentUser.toJSON().objectId,
           })

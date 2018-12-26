@@ -5,7 +5,9 @@ export default {
         ruleForm: {
           title: '',
           desc:'',
-          content: ''
+          carcontent: '',
+          foodcontent:'',
+          memcontent:''
         },
         rules: {
           title: [
@@ -16,7 +18,13 @@ export default {
             {required:true,message:'请输入帖子内容摘要',trigger:'blur'},
             {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
           ],
-          content: [
+          carcontent: [
+            { required: true, message: '请填写帖子详细内容', trigger: 'blur' }
+          ],
+          foodcontent: [
+            { required: true, message: '请填写帖子详细内容', trigger: 'blur' }
+          ],
+          memcontent: [
             { required: true, message: '请填写帖子详细内容', trigger: 'blur' }
           ]
         }
@@ -33,14 +41,24 @@ export default {
           let data = res.toJSON();
           this.ruleForm.title = data.title;
           this.ruleForm.desc = data.description;
-          this.ruleForm.content = data.content;
+          this.ruleForm.carcontent = data.carcontent;
+          this.ruleForm.foodcontent = data.foodcontent;
+          this.ruleForm.memcontent = data.memcontent;
+
         });
       },
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             let blog = this.AV.Object.createWithoutData('Blogs', this.blogId);
-            blog.save({title:this.ruleForm.title,description:this.ruleForm.desc,content:this.ruleForm.content}).then(res=>{
+            blog.save({title:this.ruleForm.title,
+              description:this.ruleForm.desc,
+              foodcontent:this.ruleForm.foodcontent,
+              carcontent:this.ruleForm.carcontent,
+              memcontent:this.ruleForm.memcontent,
+            
+            
+            }).then(res=>{
               console.log(res)
               this.$notify({
                 title:'成功',

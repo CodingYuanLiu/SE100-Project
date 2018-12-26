@@ -9,12 +9,15 @@ export default {
 		}
 	},
 	computed:{
-		content(){
-			return marked(this.blog.content);
+		memcontent(){
+			return marked(this.blog.memcontent);
 		},
-      wuyuexin(){
-        return marked(this.blog.wuyuexin);
-      },
+      foodcontent(){
+        return marked(this.blog.foodcontent);
+	  },
+	  carcontent(){
+        return marked(this.blog.carcontent);
+	  },
 	},
 	created(){
 		this.getBlogDetail();

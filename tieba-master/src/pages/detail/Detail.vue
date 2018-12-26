@@ -10,10 +10,12 @@
       </router-link>
     </section>
     <section class="content">
-      <h3>正文内容：</h3>
-      <!--将条件设相反将看到不同结果-->
-      <div v-html="wuyuexin" v-if="true"></div>
-      <div v-html="content" v-if="false"></div>
+      <h3 v-if="blog.foodcontent">拼外卖信息：</h3>
+      <h3 v-if="blog.carcontent">拼车信息：</h3>
+      <h3 v-if="blog.memcontent">拼会员信息：</h3>
+      <div v-html="foodcontent" v-if="blog.foodcontent"></div>
+      <div v-html="memcontent" v-if="blog.memcontent"></div>
+      <div v-html="carcontent" v-if="blog.carcontent"></div>
     </section>
   </div>
 </template>
