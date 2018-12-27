@@ -36,7 +36,7 @@ export default {
           let currentUser = this.AV.User.current();
           blogs.save({
             title:this.ruleForm.title,
-            description:"日期:"+this.ruleForm.fooddate+"<\br>取餐地址:"+this.ruleForm.foodaddr,
+            description:"日期:"+this.ruleForm.fooddate+" 取餐地址:"+this.ruleForm.foodaddr,
             foodcontent:this.ruleForm.foodcontent,
             tel:this.ruleForm.tel,
             user:currentUser,
