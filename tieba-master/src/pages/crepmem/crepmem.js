@@ -8,11 +8,11 @@ export default {
       },
       rules: {
         title: [
-          { required: true, message: '请输入标题', trigger: 'blur' },
+          { required: true, message: '请输入拼会员平台', trigger: 'blur' },
           { min: 3, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
         ],
         desc: [
-          {required:true,message:'请输入拼会员简介',trigger:'blur'},
+          {required:true,message:'请输入拼会员期限',trigger:'blur'},
           {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
         ],
         memcontent: [

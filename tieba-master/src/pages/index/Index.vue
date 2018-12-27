@@ -1,7 +1,8 @@
 <!-- 首页 -->
 <template>
   <div id="index" v-if="blogs.length">
-    <h3>拼外卖！！！</h3>
+    <h3>拼外卖！！！<div align="right">   <router-link :to="{name:'allfood'}"> 更多</router-link></div></h3>
+
     <section v-for="blog in blogs" :key="blog.id" v-if="blog.foodcontent">
         <router-link class="user" :to="{name:'user',params:{userId:blog.user.id},query:{page:1}}">
         <figure>
@@ -16,8 +17,8 @@
         <p>{{blog.description || blog.title}}</p>
       </router-link>
     </section>
-  <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10> </HR>    
-      <h3>拼车！！！！</h3>
+  <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10> </HR>
+    <h3>拼车！！！！<div align="right">   <router-link :to="{name:'allcar'}"> 更多</router-link></div></h3>
   <section v-for="blog in blogs" :key="blog.id" v-if="blog.carcontent">
         <router-link class="user" :to="{name:'user',params:{userId:blog.user.id},query:{page:1}}">
         <figure>
@@ -32,8 +33,8 @@
         <p>{{blog.description || blog.title}}</p>
       </router-link>
     </section>
-  <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10> </HR>    
-    <h3>拼会员！！！！</h3>
+  <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=2)" width="80%" color=#987cb9 SIZE=10> </HR>
+    <h3>拼会员！！！！<div align="right">   <router-link :to="{name:'allmem'}"> 更多</router-link></div></h3>
      <section v-for="blog in blogs" :key="blog.id" v-if="blog.memcontent">
         <router-link class="user" :to="{name:'user',params:{userId:blog.user.id},query:{page:1}}">
         <figure>

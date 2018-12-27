@@ -75,6 +75,30 @@ const router = new Router({
       }
     },
     {
+      path: '/allcar',
+      name: 'allcar',
+      component: () => import(/* webpackChunkName: "create" */ '@/pages/allcar/allcar.vue'),
+      meta:{
+        requireLogin:true
+      }
+    },
+    {
+      path: '/allmem',
+      name: 'allmem',
+      component: () => import(/* webpackChunkName: "create" */ '@/pages/allmem/allmem.vue'),
+      meta:{
+        requireLogin:true
+      }
+    },
+    {
+      path: '/allfood',
+      name: 'allfood',
+      component: () => import(/* webpackChunkName: "create" */ '@/pages/allfood/allfood.vue'),
+      meta:{
+        requireLogin:true
+      }
+    },
+    {
       path: '/edit/:blogId',
       name: 'edit',
       component: () => import(/* webpackChunkName: "edit" */ '@/pages/edit/Edit.vue'),
