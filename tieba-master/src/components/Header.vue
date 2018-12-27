@@ -1,6 +1,9 @@
 <template>
   <el-menu :default-active="$route.path" mode="horizontal" router>
     <el-menu-item index="/">首页</el-menu-item>
+    <el-menu-item index="/i_car">拼车</el-menu-item>
+    <el-menu-item index="/i_food">拼外卖</el-menu-item>
+    <el-menu-item index="/i_mem">拼会员</el-menu-item>
     <el-menu-item index="/register" class="right" v-if="!isLogin">注册</el-menu-item>
     <template>
     <el-submenu index="my" style="float:right">
