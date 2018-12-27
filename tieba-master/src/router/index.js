@@ -12,6 +12,21 @@ const router = new Router({
       component: () => import(/* webpackChunkName: "index" */ '@/pages/index/Index.vue')
     },
     {
+      path: '/i_car',
+      name: 'car',
+      component: () => import(/* webpackChunkName: "car" */ '@/pages/i_car/i_car.vue')
+    },
+    {
+      path: '/i_food',
+      name: 'food',
+      component: () => import(/* webpackChunkName: "food" */ '@/pages/i_food/i_food.vue')
+    },
+    {
+      path: '/i_mem',
+      name: 'mem',
+      component: () => import(/* webpackChunkName: "mem" */ '@/pages/i_mem/i_mem.vue')
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ '@/pages/login/Login.vue'),
