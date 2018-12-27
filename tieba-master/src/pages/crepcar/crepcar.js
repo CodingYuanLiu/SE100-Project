@@ -5,14 +5,20 @@ export default {
         title: '',
         desc:'',
         carcontent: '',
+        carleave:'',
+        cargo:''
       },
       rules: {
-        title: [
-          { required: true, message: '请输入拼车标题', trigger: 'blur' },
-          { min: 3, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
+        carleave: [
+          { required: true, message: '请输入拼车出发地', trigger: 'blur' },
+          { min: 2, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
+        ],
+        cargo: [
+          {required:true,message:'请输入拼车目的地',trigger:'blur'},
+          {min:2,max:10,message:'内容摘要需要在 3 ~ 16 个字符之间'}
         ],
         desc: [
-          {required:true,message:'请输入拼车简介',trigger:'blur'},
+          {required:true,message:'请输入拼车时间',trigger:'blur'},
           {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
         ],
         carcontent: [
@@ -29,7 +35,7 @@ export default {
           let blogs = new Blogs();
           let currentUser = this.AV.User.current();
           blogs.save({
-            title:this.ruleForm.title,
+            title:this.ruleForm.carleave+'->'+this.ruleForm.cargo,
             description:this.ruleForm.desc,
             carcontent:this.ruleForm.carcontent,
             user:currentUser,
