@@ -5,14 +5,20 @@ export default {
         title: '',
         desc:'',
         foodcontent: '',
+        fooddate:'',
+        foodAddr:''
       },
       rules: {
         title: [
           { required: true, message: '请输入标题', trigger: 'blur' },
           { min: 3, max: 16, message: '长度在 3 到 16 个字符', trigger: 'blur' }
         ],
-        desc: [
-          {required:true,message:'请输入拼外卖简介',trigger:'blur'},
+        fooddate: [
+          {required:true,message:'请输入拼外卖时间',trigger:'blur'},
+          {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
+        ],
+        foodaddr: [
+          {required:true,message:'请输入拼外卖地址',trigger:'blur'},
           {min:3,max:80,message:'内容摘要需要在 3 ~ 80 个字符之间'}
         ],
         foodcontent: [
@@ -30,7 +36,7 @@ export default {
           let currentUser = this.AV.User.current();
           blogs.save({
             title:this.ruleForm.title,
-            description:"日期:"+this.ruleForm.date+"<\br>取餐地址:"+this.ruleForm.addr,           
+            description:"日期:"+this.ruleForm.fooddate+"<\br>取餐地址:"+this.ruleForm.foodaddr,
             foodcontent:this.ruleForm.foodcontent,
             tel:this.ruleForm.tel,
             user:currentUser,
