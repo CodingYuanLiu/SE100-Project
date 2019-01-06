@@ -1,7 +1,7 @@
 <template>
   <div id="create">
   	<el-form label-position="top" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-  <el-form-item label="帖子标题" prop="title">
+  <el-form-item label="拼单信息标题" prop="title">
     <el-input v-model="ruleForm.title"></el-input>
   </el-form-item>
     <el-form-item label="内容摘要" prop="desc">

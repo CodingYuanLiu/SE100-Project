@@ -1,10 +1,10 @@
 <template>
   <div id="crepcar">
     <el-form label-position="top" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="拼车出发地" prop="leave">
+      <el-form-item label="拼车出发地" prop="carleave">
         <el-input v-model="ruleForm.carleave"></el-input>
       </el-form-item>
-      <el-form-item label="拼车目的地" prop="go">
+      <el-form-item label="拼车目的地" prop="cargo">
         <el-input  type="textarea" v-model="ruleForm.cargo"></el-input>
       </el-form-item>
       <el-form-item label="拼车时间" prop="desc">
