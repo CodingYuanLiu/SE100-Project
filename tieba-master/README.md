@@ -13,8 +13,8 @@
 ### 信息详情：
 ![avatar](./details.png)
 ### 个人信息:
-![avatar](./personalinfo.png)]
--------------
+![avatar](./personalinfo.png)
+---
 ## q1 analysis
 ### 问题1、2
 ![avatar](./q1.12.png)
